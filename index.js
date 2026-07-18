@@ -16,5 +16,13 @@ class hashMap {
         return hashCode;
     }
 
+    setItem(key, value) {
+        let index = this.hash(key)
+        console.log(key)
 
-}   
+        if (!this.buckets[index]) {
+            this.buckets[index] = []
+        }
+    }
+
+}

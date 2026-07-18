@@ -22,6 +22,8 @@ class hashMap {
 
         if (!this.buckets[index]) {
             this.buckets[index] = []
+
+            this.buckets[index].push([key, value]);
         }
     }
 

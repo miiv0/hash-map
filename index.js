@@ -1,6 +1,6 @@
 class hashMap {
 
-    constructor(size = 50) {
+    constructor(size = 16) {
         this.buckets = new Array(size);
         this.size = size
     }
@@ -16,7 +16,7 @@ class hashMap {
         return hashCode;
     }
 
-    setItem(key, value) {
+    set(key, value) {
         let index = this.hash(key)
         console.log(key)
 
@@ -24,6 +24,15 @@ class hashMap {
             this.buckets[index] = []
 
             this.buckets[index].push([key, value]);
+        }
+    }
+
+    get(key) {
+        let index = this.hash(key)
+        console.log(key)
+
+        if (!this.buckets[index]) {
+            throw new Error("This key does not exist")
         }
     }
 

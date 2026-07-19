@@ -16,18 +16,19 @@ class hashMap {
 
         return hashCode;
     }
-    
+
     checkIndex(key) {
-        if (index < 0 || index >= buckets.length) {
+        let index = this.hash(key)
+        if (index < 0 || index >= this.buckets.length) {
             throw new Error("Trying to access index out of bounds");
         }
+        return index
     }
 
 
     set(key, value) {
         let index = this.hash(key)
-        console.log(key)
-        
+
         if (!this.buckets[index]) {
             this.buckets[index] = []
 
@@ -37,7 +38,6 @@ class hashMap {
 
     get(key) {
         let index = this.hash(key)
-        console.log(key)
 
         if (!this.buckets[index]) {
             throw new Error("This key does not exist")

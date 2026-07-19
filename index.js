@@ -27,7 +27,7 @@ class hashMap {
 
 
     set(key, value) {
-        let index = this.hash(key)
+        let index = this.checkIndex(key)
 
         if (!this.buckets[index]) {
             this.buckets[index] = []
@@ -37,11 +37,15 @@ class hashMap {
     }
 
     get(key) {
-        let index = this.hash(key)
+        let index = this.checkIndex(key)
 
         if (!this.buckets[index]) {
             throw new Error("This key does not exist")
         }
+    }
+
+    set(key) {
+
     }
 
 }

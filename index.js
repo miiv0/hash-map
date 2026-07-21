@@ -11,7 +11,7 @@ class hashMap {
         const primeNumber = 31;
         for (let i = 0; i < key.length; i++) {
             hashCode = primeNumber * hashCode + key.charCodeAt(i);
-            hashCode = hashCode % buckets.length
+            hashCode = hashCode % this.buckets.length
         }
 
         return hashCode;
@@ -25,14 +25,20 @@ class hashMap {
         return index
     }
 
-
     set(key, value) {
         let index = this.checkIndex(key)
 
         if (!this.buckets[index]) {
             this.buckets[index] = []
-
             this.buckets[index].push([key, value]);
+        } else if (this.buckets[index]) {
+            let found = false
+            for (let i = 0; i < this.buckets[index].length; i++) {
+                if (key === this.buckets[index][i][0]) {
+                    this.buckets[index][i][1] = value
+                    found = true
+                } else
+            }
         }
     }
 
@@ -42,10 +48,6 @@ class hashMap {
         if (!this.buckets[index]) {
             throw new Error("This key does not exist")
         }
-    }
-
-    set(key) {
-
     }
 
 }

@@ -53,3 +53,8 @@ class hashMap {
     }
 
 }
+
+const test = new hashMap(4)
+test.set('apple', 'red')
+test.set('banana', 'yellow')
+test.set('apple', 'green')

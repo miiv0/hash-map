@@ -37,7 +37,9 @@ class hashMap {
                 if (key === this.buckets[index][i][0]) {
                     this.buckets[index][i][1] = value
                     found = true
-                } else
+                }
+            } if (!found) {
+                this.buckets[index].push([key, value]);
             }
         }
     }

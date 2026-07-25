@@ -109,6 +109,18 @@ class hashMap {
         this.buckets = new Array(this.size);
     }
     
+    keys() {
+        let keys = []
+        for (let b = 0; b < this.buckets.length; b++) {
+            if (this.buckets[b]) {
+            for (let k = 0; k < this.buckets[b].length; k++) {
+                keys.push(this.buckets[b][k][0])
+                }
+            }
+        }
+        return keys
+     }
+    
     
 
 }

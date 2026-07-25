@@ -43,6 +43,14 @@ class hashMap {
             }
         }
         let currentLoadLevel = this.length() / this.buckets.length
+        
+        if (currentLoadLevel >= 0.75) {
+            let oldEntries = this.entries()
+            this.buckets = new Array(this.buckets.length * 2);
+            for (let i = 0; i < oldEntries.length; i++) {
+                this.set(oldEntries[i][0], oldEntries[i][1])
+                }
+            }
     }
 
     get(key) {

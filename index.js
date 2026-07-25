@@ -132,6 +132,18 @@ class hashMap {
         }
         return values
      }
+      
+    entries() {
+        let entries = []
+        for (let b = 0; b < this.buckets.length; b++) {
+            if (this.buckets[b]) {
+            for (let k = 0; k < this.buckets[b].length; k++) {
+                entries.push(this.buckets[b][k])
+                }
+            }
+        }
+        return entries
+     }
     
     
 

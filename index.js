@@ -48,8 +48,17 @@ class hashMap {
         let index = this.checkIndex(key)
 
         if (!this.buckets[index]) {
-            throw new Error("This key does not exist")
+            return null
+        } else if (this.buckets[index]) {
+            for (let i = 0; i < this.buckets[index].length; i++) {
+                if (key === this.buckets[index][i][0]) {
+                    const value = this.buckets[index][i][1]
+                    return value
+                }
+            }
+            return null
         }
+
     }
 
 }

@@ -153,9 +153,6 @@ class hashMap {
         }
         return entries
      }
-    
-    
-
 }
 
 const test = new hashMap(4)

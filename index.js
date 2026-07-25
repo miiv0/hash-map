@@ -60,6 +60,22 @@ class hashMap {
         }
 
     }
+    
+    has(key) {
+        let index = this.checkIndex(key)
+
+        if (!this.buckets[index]) {
+            return false
+        } else if (this.buckets[index]) {
+            for (let i = 0; i < this.buckets[index].length; i++) {
+                if (key === this.buckets[index][i][0]) {
+                    return true
+                }
+            }
+            return false
+        }
+
+    }
 
 }
 

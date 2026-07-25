@@ -42,6 +42,7 @@ class hashMap {
                 this.buckets[index].push([key, value]);
             }
         }
+        let currentLoadLevel = this.length() / this.buckets.length
     }
 
     get(key) {

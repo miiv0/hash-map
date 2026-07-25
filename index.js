@@ -93,6 +93,19 @@ class hashMap {
         }
 
     }
+    
+    length() {
+            let length = 0
+            for (let i = 0; i < this.buckets.length; i++) {
+                if (this.buckets[i]) {
+                    length += this.buckets[i].length
+                }
+            }
+            return length
+
+    }
+    
+    
 
 }
 

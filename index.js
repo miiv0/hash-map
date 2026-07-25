@@ -104,6 +104,10 @@ class hashMap {
             return length
 
     }
+  
+    clear() {
+        this.buckets = new Array(this.size);
+    }
     
     
 

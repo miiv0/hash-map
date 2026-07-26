@@ -43,14 +43,14 @@ class hashMap {
             }
         }
         let currentLoadLevel = this.length() / this.buckets.length
-        
+
         if (currentLoadLevel >= 0.75) {
             let oldEntries = this.entries()
             this.buckets = new Array(this.buckets.length * 2);
             for (let i = 0; i < oldEntries.length; i++) {
                 this.set(oldEntries[i][0], oldEntries[i][1])
-                }
             }
+        }
     }
 
     get(key) {
@@ -69,7 +69,7 @@ class hashMap {
         }
 
     }
-    
+
     has(key) {
         let index = this.checkIndex(key)
 
@@ -85,7 +85,7 @@ class hashMap {
         }
 
     }
-    
+
     remove(key) {
         let index = this.checkIndex(key)
 
@@ -102,57 +102,57 @@ class hashMap {
         }
 
     }
-    
+
     length() {
-            let length = 0
-            for (let i = 0; i < this.buckets.length; i++) {
-                if (this.buckets[i]) {
-                    length += this.buckets[i].length
-                }
+        let length = 0
+        for (let i = 0; i < this.buckets.length; i++) {
+            if (this.buckets[i]) {
+                length += this.buckets[i].length
             }
-            return length
+        }
+        return length
 
     }
-  
+
     clear() {
         this.buckets = new Array(this.size);
     }
-    
+
     keys() {
         let keys = []
         for (let b = 0; b < this.buckets.length; b++) {
             if (this.buckets[b]) {
-            for (let k = 0; k < this.buckets[b].length; k++) {
-                keys.push(this.buckets[b][k][0])
+                for (let k = 0; k < this.buckets[b].length; k++) {
+                    keys.push(this.buckets[b][k][0])
                 }
             }
         }
         return keys
     }
-     
+
     values() {
         let values = []
         for (let b = 0; b < this.buckets.length; b++) {
             if (this.buckets[b]) {
-            for (let k = 0; k < this.buckets[b].length; k++) {
-                values.push(this.buckets[b][k][1])
+                for (let k = 0; k < this.buckets[b].length; k++) {
+                    values.push(this.buckets[b][k][1])
                 }
             }
         }
         return values
-     }
-      
+    }
+
     entries() {
         let entries = []
         for (let b = 0; b < this.buckets.length; b++) {
             if (this.buckets[b]) {
-            for (let k = 0; k < this.buckets[b].length; k++) {
-                entries.push(this.buckets[b][k])
+                for (let k = 0; k < this.buckets[b].length; k++) {
+                    entries.push(this.buckets[b][k])
                 }
             }
         }
         return entries
-     }
+    }
 }
 
 const test = new hashMap(4)
